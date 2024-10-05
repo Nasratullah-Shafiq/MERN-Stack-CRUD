@@ -1,10 +1,10 @@
 import './App.css';
-
+import User from "./getuser/user";
+import "./getuser/user.css";
 function App() {
   return (
     <div className="App">
-      <h1>This is MERN STACK RUNNING</h1>
-    
+      <User />
     </div>
   );
 }
