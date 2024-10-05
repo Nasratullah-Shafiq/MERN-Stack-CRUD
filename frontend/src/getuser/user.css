@@ -1,0 +1,8 @@
+.userTable{
+    width: 70%;
+    margin:50px auto;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.65s);
+}
