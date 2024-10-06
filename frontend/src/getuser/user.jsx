@@ -20,8 +20,10 @@ const User = ()=>{
                         <td> Nasratullah Shafiq </td>
                         <td> Email </td>
                         <td> Address </td>
-                        <td> <i className='fa-regular fa-pen-to-square'></i>
-                        </td> <td><i class="fa-solid fa-trash"></i> </td>
+                        <td className="actionButtons"> 
+                            <button type="button" className="btn btn-info"> <i className='fa-solid fa-pen-to-square'></i> </button>
+                            
+                            <button type="button" className="btn btn-danger"> <i class="fa-solid fa-trash"></i>  </button></td>
                     </tr>
                 </tbody>
             </table>
