@@ -3,7 +3,7 @@ import React from 'react'
 const User = ()=>{
     return(
         <div className = "userTable">
-            <button type="button" calssName="btn btn-primary"> Primary </button>
+            <button type="button" className="btn btn-primary"> Primary </button>
             <table className="table table-bordered">
                 <thead>
                     <tr>
@@ -20,7 +20,8 @@ const User = ()=>{
                         <td> Nasratullah Shafiq </td>
                         <td> Email </td>
                         <td> Address </td>
-                        <td> Actions </td>
+                        <td> <i className='fa-regular fa-pen-to-square'></i>
+                        </td> <td><i class="fa-solid fa-trash"></i> </td>
                     </tr>
                 </tbody>
             </table>

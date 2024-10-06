@@ -6,3 +6,16 @@
     border-radius: 10px;
     box-shadow: 1px 1px 8px rgba(0,0,0,0.65s);
 }
+.userTable table{
+    width: 100%;
+    margin-top: 30px;
+}
+.userTable table thead th{
+    background-color: darkcyan;
+    color: white;
+}
+.userTable table thead td{
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
