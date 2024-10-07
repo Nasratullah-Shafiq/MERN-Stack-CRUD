@@ -1,6 +1,18 @@
-import React from 'react'
-
+import React, {useEffect, useState} from 'react'
+import axios from 'axios';
 const User = ()=>{
+    const [users, setUsers] = useState([])
+    useEffect(()=>{
+        const fetchData = async()=>{
+            try{
+                const result = await axios.get("http://localhost:8000/api/users");
+                setUsers(result.data);
+            }catch(error){
+                console.log("error loading data", error);
+            }
+        };
+        fetchData()
+    },[]);
     return(
         <div className = "userTable">
             <button type="button" className="btn btn-primary"> Primary </button>
@@ -15,16 +27,21 @@ const User = ()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> 1 </td>
-                        <td> Nasratullah Shafiq </td>
-                        <td> Email </td>
-                        <td> Address </td>
-                        <td className="actionButtons"> 
-                            <button type="button" className="btn btn-info"> <i className='fa-solid fa-pen-to-square'></i> </button>
-                            
-                            <button type="button" className="btn btn-danger"> <i class="fa-solid fa-trash"></i>  </button></td>
-                    </tr>
+                    {users.map((user, index)=>{
+                        return(
+                            <tr>
+                                <td> {index + 1} </td>
+                                <td> {user.name} </td>
+                                <td> {user.email} </td>
+                                <td> {user.address} </td>
+                                <td className="actionButtons"> 
+                                    <button type="button" className="btn btn-info"> <i className='fa-solid fa-pen-to-square'></i> </button>
+                                    
+                                    <button type="button" className="btn btn-danger"> <i class="fa-solid fa-trash"></i>  </button></td>
+                            </tr>
+                        )
+                    })}
+                    
                 </tbody>
             </table>
         </div>
