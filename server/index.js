@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import Dotenv from "dotenv"
+import route from './routes/route.js';
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,4 +20,6 @@ mongoose
             });
         })
         .catch((error)=>console.log(error));
-app.use("api", route);
+app.use("/api", route);
+
+
