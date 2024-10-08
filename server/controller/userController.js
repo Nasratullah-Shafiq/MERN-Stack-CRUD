@@ -1,3 +1,4 @@
+
 import User from "../model/user.js";
 
 export const create = async(req, res)=>{
@@ -16,7 +17,7 @@ export const create = async(req, res)=>{
         res.status(500).json({errorMessage:error.message});
     }
 };
- export const getAllusers = async(req, res)=>{
+ export const getAllUsers = async(req, res)=>{
     try{
         const userData = await User.find();
         if(!userData || userData.length === 0){
@@ -26,13 +27,13 @@ export const create = async(req, res)=>{
     }catch(error){
         res.status(500).json({errorMessage:error.message});
     }
- }
+ };
  export const getUserById = async(req, res)=>{
     try{
         const id = req.params.id;
         const userExist = await User.findById(id);
         if(!userExist){
-            return res.status(404).json({ message: "User Data not found." });
+            return res.status(404).json({ message: "User Data By Id not found." });
         }
         res.status(200).json(userExist);
     }catch(error){
