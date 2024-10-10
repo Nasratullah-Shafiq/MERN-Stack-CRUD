@@ -17,17 +17,31 @@ export const create = async(req, res)=>{
         res.status(500).json({errorMessage:error.message});
     }
 };
- export const getAllUsers = async(req, res)=>{
-    try{
+//  export const getAllUsers = async(req, res)=>{
+//     try{
+//         const userData = await User.find();
+//         if(!userData || userData.length === 0){
+//             return res.status(404).json({ message: "User data not found."});        
+//         }
+//         res.status(200).json(userData); 
+//     }catch(error){
+//         res.status(500).json({errorMessage:error.message});
+//     }
+//  };
+export const getAllUsers = async (req, res) => {
+    try {
         const userData = await User.find();
-        if(!userData || userData.length === 0){
-            return res.status(404).json({ message: "User data not found."});        
+        console.log("User data fetched:", userData); // Log the data returned from the query
+        if (userData.length === 0) {
+            return res.status(404).json({ message: "User data not found." });
         }
-        res.status(200).json(userData); 
-    }catch(error){
-        res.status(500).json({errorMessage:error.message});
+        res.status(200).json(userData);
+    } catch (error) {
+        console.error("Error fetching user data:", error.message);
+        res.status(500).json({ errorMessage: error.message });
     }
- };
+};
+
  export const getUserById = async(req, res)=>{
     try{
         const id = req.params.id;
