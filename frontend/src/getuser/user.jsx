@@ -13,6 +13,16 @@ const User = ()=>{
         };
         fetchData()
     },[]);
+    // useEffect(() =>{
+    //     (async()=>await Load())();
+    //   }, []);
+    
+    //   async function Load(){
+    //     const result = await axios.get(
+    //       "http://localhost:8000/api/users/");
+    //       setUsers(result.data);
+    //       console.log(result.data);
+    //   }
     return(
         <div className = "userTable">
             <button type="button" className="btn btn-primary"> Primary </button>
@@ -30,7 +40,7 @@ const User = ()=>{
                     {users.map((user, index)=>{
                         return(
                             <tr>
-                                <td> {index + 1} </td>
+                                <td> {index+1} </td>
                                 <td> {user.name} </td>
                                 <td> {user.email} </td>
                                 <td> {user.address} </td>
