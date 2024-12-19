@@ -10,4 +10,5 @@ route.get("/user/:id", getUserById);
 route.put("/update/user/:id",update);
 route.delete("/delete/user/:id",deleteUser);
 
+
 export default route;
