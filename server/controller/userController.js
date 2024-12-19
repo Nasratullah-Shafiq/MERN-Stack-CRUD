@@ -28,7 +28,6 @@ export const create = async(req, res)=>{
 //         res.status(500).json({errorMessage:error.message});
 //     }
 //  };
-
 export const getAllUsers = async (req, res) => {
     try {
         const userData = await User.find();
